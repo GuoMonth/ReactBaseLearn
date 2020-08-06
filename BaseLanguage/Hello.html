@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hello,react</title>
+        <meta charset="utf-8">
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div>This is a Test</div>
+        <div id="root"></div>
+        <script type="text/babel">
+            const name = "Tim";
+            const element = <h1>Hello,{name}</h1>
+            ReactDOM.render(
+                element,
+                document.getElementById('root')
+            );
+        </script>
+    </body>
+</html>
