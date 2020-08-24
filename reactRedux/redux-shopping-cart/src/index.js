@@ -1,17 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { createStore } from "redux";
+import { combineReducers } from 'redux';
+// 测试数据
+const initialState = {
+  cart: [
+    {
+      product: 'bread 700g',
+      quantity: 2,
+      unitCost: 90
+    },
+    {
+      product: 'milk 500ml',
+      quantity: 1,
+      unitCost: 47
+    }
+  ]
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// 产品的
+const productsReducer = function(state=[], action) {
+  return state;
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// 购物车的
+const cartReducer = function(state=initialState, action) {
+  return state;
+}
+
+const allReducers = {
+  products: productsReducer,
+  shoppingCart: cartReducer
+}
+
+const rootReducer = combineReducers(allReducers);
+
+const store = createStore(rootReducer);
+
+console.log("initial state: ", store.getState());
