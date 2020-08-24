@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## 从这里进行学习Redux：https://segmentfault.com/a/1190000011474522
+
 ## Available Scripts
 
 In the project directory, you can run:
