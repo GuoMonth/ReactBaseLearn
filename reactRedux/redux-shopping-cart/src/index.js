@@ -21,9 +21,28 @@ const productsReducer = function(state=[], action) {
   return state;
 }
 
+const ADD_TO_CART = 'ADD_TO_CART';
+
 // 购物车的
 const cartReducer = function(state=initialState, action) {
-  return state;
+  switch (action.type) {
+    case ADD_TO_CART: {
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+    }
+
+    default:
+      return state;
+  }
+}
+
+function addToCart(product, quantity, unitCost) {
+  return {
+    type: ADD_TO_CART,
+    payload: { product, quantity, unitCost }
+  }
 }
 
 const allReducers = {
