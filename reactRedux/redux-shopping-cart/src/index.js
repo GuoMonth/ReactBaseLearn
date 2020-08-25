@@ -59,6 +59,12 @@ let unsubscribe = store.subscribe(() =>
   console.log(store.getState())
 );
 
+store.dispatch(addToCart('Coffee 500gm', 1, 250));
+store.dispatch(addToCart('Flour 1kg', 2, 110));
+store.dispatch(addToCart('Juice 2L', 1, 250));
+
+// 取消监听
 unsubscribe();
 
+store.dispatch(addToCart('Doujiang 1L', 1.5, 255));
 console.log("initial state: ", store.getState());
