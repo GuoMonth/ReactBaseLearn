@@ -54,4 +54,11 @@ const rootReducer = combineReducers(allReducers);
 
 const store = createStore(rootReducer);
 
+// 监听state的改变
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+);
+
+unsubscribe();
+
 console.log("initial state: ", store.getState());
